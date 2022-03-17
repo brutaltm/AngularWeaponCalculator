@@ -1,0 +1,62 @@
+<div class="tableDiv">
+<table #table class="table table-dark table-bordered">
+    <tbody>
+        <tr *ngFor="let item of props">
+            <th (click)=sort(item)>{{item}}</th>
+            <td [class]="item == 'name' ? 'no-select' : ''" (mousedown)="onMouseDown(gun)" (mouseup)="onMouseUp(gun)" *ngFor="let gun of guns" style="position: relative;">
+                {{gun[item]}}
+                <fa-icon *ngIf="item == 'name'" [icon]="faMinusCircle" (click)="removeGun(gun[item])"
+                    style="color: red; vertical-align: top; position: absolute; top: 0px; right: 3px;"></fa-icon>
+            </td>
+            <td *ngIf="item == 'name'; else emptyTemp">
+                <select class="form-select optionSelect arrowWhite" style="min-width: 135px" [(ngModel)]="gunSelectValue">
+                    <option value=-1 selected="selected">Add Gun</option>
+                    <option *ngFor="let gun of gunsLeft; index as ind" value="{{ind}}">{{gun.name}}</option>
+                </select>
+                <app-button textColor="white" classes="btn-success" text="Add" (click)="addGun(gunSelectValue)"></app-button>
+            </td>
+            <ng-template #emptyTemp>
+                <td></td>
+            </ng-template>
+        </tr>
+        <tr class="settingsRow" style="border-top: 0;">
+            <td [attr.colspan]="guns.length+2">
+                <div class="form-group" style="display: inline-block; width: 100%;">
+                    <select [(ngModel)]="scenarioType" (change)="onScenarioTypeChanged()" class="form-select arrowWhiteLeft" style="min-width: 110px; margin: 0px;">
+                        <option *ngFor="let type of scenarioTypes" value="{{type}}">{{type}}</option>
+                    </select>
+                    <input type="number" class="form-control" [(ngModel)]="distance" (ngModelChange)="onDistanceChanged()" min="0" name="distance" id="distance" style="margin-left: 5px; float: left">
+                    <label style="margin-left: 10px;" for="health">Health: </label>
+                    <input type="number" class="form-control" [(ngModel)]="health" (ngModelChange)="onHealthChanged()" min="0" name="health" id="health">
+                    <label class="form-check-label">
+                    <input type="checkbox" [(ngModel)]="headshot" (ngModelChange)="onHeadshotChanged()" class="form-check-input" name="" id="">
+                    Headshot
+                    </label>
+                    <select [(ngModel)]="option" (ngModelChange)="onOptionChanged()" class="form-select optionSelect arrowWhite">
+                        <option *ngFor="let item of options; index as ind" value="{{item}}">{{item}}</option>
+                    </select>
+                </div>
+            </td>
+        </tr>
+        <div #placeholder></div>
+        <tr>
+            <td>
+                <div [ngSwitch]="scenarioType">
+                    <div *ngSwitchCase="'Distance'">
+                        <select [(ngModel)]="selectValue" class="form-select arrowWhite">
+                            <option *ngFor="let item of array; index as ind" value="{{ind * 5}}">{{ind * 5}}%</option>
+                        </select>
+                    </div>
+                    <input *ngSwitchCase="'Protection'" type="number"  class="form-control" style="margin-left: 0px; margin-right: 0px; min-width: 80px; float: left;" min="0" [(ngModel)]="selectValue">
+                    <div *ngSwitchDefault>????</div>
+                
+                <app-button textColor="white" classes="btn-success" text="Add" (click)="addScenario(selectValue)" [ngStyle]="{'float': 'right'}"></app-button>
+                </div>
+            </td>
+            <td *ngFor="let gun of guns"></td>
+            <td></td>
+        </tr>
+        
+    </tbody>
+</table>
+</div>

@@ -1,0 +1,13 @@
+.avatar {
+    vertical-align: middle;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 0px solid white;
+    cursor: pointer;
+}
+
+.google {
+    color: white;
+    border: 0;
+}

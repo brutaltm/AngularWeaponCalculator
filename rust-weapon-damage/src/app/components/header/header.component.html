@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Rust Calculator</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/']" routerLinkActive="router-link-active"  aria-current="page">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
+          </li>
+        </ul>
+        <div [ngSwitch]="userService.loggedIn">
+          <div *ngSwitchCase="true" >
+            <img src="{{ userService.user.photoUrl }}" id="dropdownMenuButton2" class="avatar dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false" />
+            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-dark" style="float: center; text-align: right;" aria-labelledby="navbarDarkDropdownMenuLink">
+              <li><a class="btn dropdown-item" (click)="userService.signOut()">Sign Out</a></li>
+            </ul>
+          </div>
+          <div *ngSwitchDefault>
+            <a class="btn btn-dark btn-outline-primary google" (click)="userService.signInWithGoogle()" role="button" style="text-transform:none">
+              <img width="20px" style="margin-bottom:3px; margin-right:5px" alt="Google sign-in" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png" />
+              Sign in with Google
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>

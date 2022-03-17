@@ -1,0 +1,157 @@
+table {
+    width: 1%;
+    margin: 0 auto;
+    min-width: 50%;
+}
+
+.tableDiv {
+    margin: 0 auto;
+    border: 1px solid white;
+    width: min-content;
+}
+
+td {
+    vertical-align: middle;
+    min-width: 95px;
+    text-align: center;
+}
+
+td:last-child {
+    width: 1%;
+    min-width: 205px;
+    padding: 3px;
+}
+
+tr:first-child {
+    cursor: grab;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+tr:last-child td:first-child {
+    padding: 3px;
+
+}
+
+fa-icon {
+    cursor: pointer;
+}
+
+tr:first-child:active {
+    cursor: grabbing;
+}
+
+
+tr td:first-child {
+    width:1%;
+    white-space: nowrap;
+    min-width:150px;
+}
+
+.settingsRow {
+    text-align: left;
+}
+
+th {
+    cursor: pointer;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.hover {
+    background-color: rgb(32, 124, 204);
+}
+
+select {
+    float: left; 
+    min-width: 80px;
+    max-width: 80px;
+    width: 40%;
+    background-color: rgb(43, 39, 39);
+    color: white;
+}
+
+.arrowWhite {
+    padding-right: 28px;
+    background-image:
+        linear-gradient(45deg, transparent 50%, white 50%),
+        linear-gradient(135deg, white 50%, transparent 50%),
+        linear-gradient(to right, skyblue, skyblue);
+    background-position:
+        calc(100% - 15px) calc(1em + 0px),
+        calc(100% - 10px) calc(1em + 0px),
+        100% 0;
+    background-size:
+        5px 5px,
+        5px 5px,
+        0px 0px;
+    background-repeat: no-repeat;
+}
+
+.arrowWhiteLeft {
+    padding-left: 25px;
+    padding-right: 0px;
+    background-image:
+        linear-gradient(45deg, transparent 50%, white 50%),
+        linear-gradient(135deg, white 50%, transparent 50%),
+        linear-gradient(to right, skyblue, skyblue);
+    background-position:
+        calc(10px) calc(1em + 0px),
+        calc(15px) calc(1em + 0px),
+        0% 0;
+    background-size:
+        5px 5px,
+        5px 5px,
+        0px 0px;
+    background-repeat: no-repeat;
+}
+
+.no-select {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.optionSelect {
+    float: right; 
+    min-width: fit-content;
+    max-width: fit-content;
+    margin-left: 3px;
+}
+
+.form-group {
+    width:fit-content;
+    margin: 0 auto;
+}
+
+input {
+    background-color: rgb(43, 39, 39);
+    color: white;
+}
+
+input:focus, input:focus-visible, input:focus-within {
+    background-color: rgb(43, 39, 39);
+    background: rgb(43, 39, 39);
+    color: white;
+}
+
+input[type="number"] {
+    max-width: 70px;
+    min-width: 70px;
+    display: inline-block;
+    padding-left: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+input[type=number]:hover::-webkit-inner-spin-button,
+input[type=number]:hover::-webkit-outer-spin-button,
+input[type=number]:focus::-webkit-inner-spin-button,
+input[type=number]:focus::-webkit-outer-spin-button {
+    opacity: 0.5;
+}
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+}

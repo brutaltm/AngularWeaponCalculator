@@ -1,0 +1,12 @@
+fa-icon, th {
+    cursor: pointer;
+}
+
+tr:hover {
+    color: red;
+}
+
+td {
+    vertical-align: middle;
+    text-align: center;
+}

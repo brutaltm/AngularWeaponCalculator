@@ -1,0 +1,12 @@
+<th [ngSwitch]="scenarioType" (click)="sort(protection+'%')" style="position: relative;">
+    <span *ngSwitchCase="'Distance'">{{(protection*100).toFixed(0)+"%"}}</span>
+    <span *ngSwitchCase="'Protection'">{{(protection).toFixed(0)+"m"}}</span>
+    <span *ngSwitchDefault>????</span>
+    <fa-icon [icon]="faMinusCircle" (click)="onClose()"
+        style="color: red; vertical-align: top; position: absolute; top: 0px; right: 3px;"></fa-icon>
+</th>
+<td *ngFor="let gun of guns" 
+[ngStyle]="{'background-color': 'rgb(0,'+ (50+100 * (1-(gun[(this.protection+'%')]-minMax.min)/(minMax.max - minMax.min)))+',0)'}">
+    {{gun[protection+"%"].toFixed(2)}}
+</td>
+<td></td>

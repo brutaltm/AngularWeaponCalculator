@@ -1,8 +1,8 @@
 # AngularWeaponCalculator
  Weapon damage calculator for game Rust made with Angular, NodeJS
 
- ### Demo on Heroku:
- https://rust-damage-calculator.herokuapp.com/ (site might take couple seconds to launch)
+ ### App deployed on VM:
+ http://138.2.171.185/angularGuns/ (no domain for now -> no OAuth)
  
   ### Overview
  

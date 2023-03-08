@@ -3,6 +3,7 @@
 
  ### App deployed on VM, Render.com:
  https://angularguns.onrender.com 
+ 
  http://138.2.171.185/angularGuns/ (no domain for now -> no OAuth)
  
   ### Overview
